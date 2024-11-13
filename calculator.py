@@ -43,12 +43,31 @@ class Calculator:
             return "fam. you just divided somethin with 0 and that ain't allowed by isaac newton or somethin."
     
     def modulo(self, a, b):
-        if a < b:
-            return a
+        if (a > 0 and b > 0):
+            if (a<b):
+                return a
+            else:
+                while a >= b:
+                    self.subtract(a,b)
+                return a
+        elif (a < 0 and b < 0):
+            if (a>b):
+                return a
+            else:
+                while a <= b:
+                    self.subtract(a,b)
+                return a
         else:
-            while a >= b:
-                a = self.subtract(a, b)
-            return a
+            if (a<b):
+                a = a-a-a
+                while b <= a:
+                    b += b
+                return b-a
+            else:
+                b = b-b-b
+                while a >= b:
+                    b += b
+                return a-b
 
 # Example usage:
 if __name__ == "__main__":
