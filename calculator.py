@@ -16,21 +16,25 @@ class Calculator:
         return result
 
     def divide(self, a, b):
-        result = 0
         if (b != 0):
-            if (a > 0 & b > 0):
+            result = 0
+            if (a > 0 and b > 0):
                 while a >= b:
                     a = self.subtract(a, b)
                     result += 1
-            elif (a > 0 & b < 0):
+            elif (a > 0 and b < 0):
+                b = b-b-b
                 while a >= b:
                     a = self.subtract(a, b)
-                    result += 1
-            elif (a < 0 & b > 0):
+                    result -= 1
+            elif (a < 0 and b > 0):
+                a = a-a-a
                 while a >= b:
                     a = self.subtract(a, b)
-                    result += 1
-            else: 
+                    result -= 1
+            else:
+                a = a-a-a
+                b = b-b-b
                 while a >= b:
                     a = self.subtract(a, b)
                     result += 1       
@@ -39,9 +43,12 @@ class Calculator:
             return "fam. you just divided somethin with 0 and that ain't allowed by isaac newton or somethin."
     
     def modulo(self, a, b):
-        while a <= b:
-            a = a-b
-        return a
+        if a < b:
+            return a
+        else:
+            while a >= b:
+                a = self.subtract(a, b)
+            return a
 
 # Example usage:
 if __name__ == "__main__":
