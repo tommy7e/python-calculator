@@ -29,16 +29,19 @@ class TestCalculator(unittest.TestCase):
     
     def test_mod(self):
         self.assertEqual(self.calc.modulo(3, 10), 3)
-        # self.assertEqual(self.calc.modulo(10, 3), 1)
-        # self.assertEqual(self.calc.modulo(0, 0), 0)
-        # self.assertEqual(self.calc.modulo(-6, 7), -42)
-        # self.assertEqual(self.calc.modulo(2, -3), -6)
-
-        print(-7%3) #jadi satu
-        print(4%-3) #jadi satu
-        print(-4%-3) #kyk positif
-        print(-3%-4) #angka kiri
-        print(-6%-17) #angka kiri
+        self.assertEqual(self.calc.modulo(10, 3), 1)
+        self.assertEqual(self.calc.modulo(0, 0), 0)
+        self.assertEqual(self.calc.modulo(5, 0), 5)
+        self.assertEqual(self.calc.modulo(-4, 0), -4)
+        self.assertEqual(self.calc.modulo(0, 3), 0)
+        self.assertEqual(self.calc.modulo(0, -8), -8)
+        self.assertEqual(self.calc.modulo(2, -3), -1)
+        self.assertEqual(self.calc.modulo(7, -3), -2)
+        self.assertEqual(self.calc.modulo(4, -3), -2)
+        self.assertEqual(self.calc.modulo(2, -3), -1)
+        self.assertEqual(self.calc.modulo(-3, -7), -3)
+        self.assertEqual(self.calc.modulo(-8, -3), -2)
+        
 
     # Add the following test methods to the TestCalculator class:
 
