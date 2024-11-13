@@ -3,20 +3,40 @@ class Calculator:
         return a + b
 
     def subtract(self, a, b):
-        return b - a
+        return a - b
 
     def multiply(self, a, b):
         result = 0
-        for i in range(b+1):
-            result = self.add(result, a)
+        if (b >= 0):
+            for i in range(b):
+                result = self.add(result, a)
+        else:
+            for i in range(b-b-b):
+                result = self.subtract(result, a)
         return result
 
     def divide(self, a, b):
         result = 0
-        while a > b:
-            a = self.subtract(a, b)
-            result += 1
-        return result
+        if (b != 0):
+            if (a > 0 & b > 0):
+                while a >= b:
+                    a = self.subtract(a, b)
+                    result += 1
+            elif (a > 0 & b < 0):
+                while a >= b:
+                    a = self.subtract(a, b)
+                    result += 1
+            elif (a < 0 & b > 0):
+                while a >= b:
+                    a = self.subtract(a, b)
+                    result += 1
+            else: 
+                while a >= b:
+                    a = self.subtract(a, b)
+                    result += 1       
+            return result
+        else:
+            return "fam. you just divided somethin with 0 and that ain't allowed by isaac newton or somethin."
     
     def modulo(self, a, b):
         while a <= b:
